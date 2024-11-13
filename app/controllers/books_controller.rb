@@ -35,7 +35,7 @@ class BooksController < ApplicationController
     def not_found_error
         @book = Book.find(params[:id])
 
-        raise ActiveRecord::RecordNotFound
+        rescue ActiveRecord::RecordNotFound
         
         render :json => { error: "Book not found" }, status: :not_found
     end
